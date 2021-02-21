@@ -10,4 +10,5 @@ class Category extends Model
     {
         // カテゴリは複数のポストを持つ
         return $this->hasMany('App\Models\Post');
+    }
 }
