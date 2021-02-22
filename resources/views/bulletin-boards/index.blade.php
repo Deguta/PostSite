@@ -4,12 +4,23 @@
 @section('keywords', 'キーワード1,キーワード2,キーワード3')
 @section('description', '投稿一覧ページの説明文')
 @section('pageCss')
-<link href="/css/bbs/style.css" rel="stylesheet">
+<link href="/css/bulletin-board/sticky-footer.css" rel="stylesheet">
 @endsection
  
 @include('layout.bulletin-board-header')
  
 @section('content')
+<div class="mt-4 mb-4">
+    <a href="{{ route('bulletin-board.create') }}" class="btn btn-primary">
+        投稿の新規作成
+    </a>
+</div>
+@if (session('flash_message'))
+    <div class="alert alert-success mt-4 mb-4">
+        {{ session('flash_message') }}
+    </div>
+@endif
+
 <div class="table-responsive">
     <table class="table table-hover">
         <thead>

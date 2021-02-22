@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('bulletin-board', 'PostsController', ['only' => ['index', 'show','create', 'store']]);
+Route::resource('bulletin-board', 'PostsController', ['only' => ['index','create', 'store','show']]);
