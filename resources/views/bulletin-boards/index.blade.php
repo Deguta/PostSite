@@ -49,8 +49,14 @@
                 </td>
                 <td class="text-nowrap">
                     <p><a href="{{ action('PostsController@show', $post->id) }}" class="btn btn-primary btn-sm">詳細</a></p>
-                    <p><a href="" class="btn btn-info btn-sm">編集</a></p>
-                    <p><a href="" class="btn btn-danger btn-sm">削除</a></p>
+                    <p><a href="{{ action('PostsController@edit', $post->id) }}" class="btn btn-info btn-sm">編集</a></p>
+                    <p>
+                        <form method="POST" action="{{ action('PostsController@destroy', $post->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger btn-sm">削除</button>
+                        </form>
+                    </p>
                 </td>
             </tr>
         @endforeach

@@ -13,11 +13,17 @@
 <div class="container mt-4">
     <div class="border p-4">
         <h1 class="h4 mb-4 font-weight-bold">
-            投稿の新規作成
+            投稿更新ページ
         </h1>
+            <tr>
+                <td>{{ $post->name }}</td>
+                <td>{{ $post->subject }}</td>
+                <td>{!! nl2br(e($post->message)) !!}</td>
+            </tr>
 
-        <form method="POST" action="{{ route('bulletin-board.store') }}">
+        <form method="POST" action="{{ route('bulletin-board.update', $post->id )}}">
             @csrf
+            @method('PUT')
 
             <fieldset class="mb-4">
 
@@ -65,7 +71,7 @@
                 <div class="mt-5">
                     <a class="btn btn-secondary" href="{{ route('bulletin-board.index') }}">キャンセル</a>
                     <button type="submit" class="btn btn-primary">
-                        投稿する
+                        更新する
                     </button>
                 </div>
             </fieldset>

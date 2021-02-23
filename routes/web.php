@@ -15,4 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('bulletin-board', 'PostsController', ['only' => ['index','create', 'store','show']]);
+Route::resource('bulletin-board', 'PostsController', ['only' => ['index','create', 'store','show','edit', 'update','destroy']]);
+
+
+Route::resource('comment', 'CommentsController',['only' => ['store']]);

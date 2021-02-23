@@ -5,18 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
+use Illuminate\Support\Facades\DB;
 
 
-class PostsController extends Controller
-{
-    public function index()
-    {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(10); //最新の投稿を上から表示と１ページに10投稿を表示する
-                return view('bulletin-boards.index',['posts'=> $posts]);
+class PostsController extends Controller {
+    public function index() {
+        $posts = Post::orderBy('created_at', 'desc')
+        ->paginate(10); //最新の投稿を上から表示と１ページに10投稿を表示する
+
+        return view('bulletin-boards.index',['posts'=> $posts]);
     }
 
-    public function create()
-    {
+    public function create() {
+    
     return view('bulletin-boards.create');
     }
  
@@ -24,8 +25,51 @@ class PostsController extends Controller
     /**
      * バリデーション、登録データの整形など
      */
-    public function store(PostRequest $request)
-    {
+    public function store(PostRequest $request) {
+        $savedata = [
+            'name' => $request->name,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'category_id' => $request->category_id,
+        ];
+
+        $post = new Post();
+        $post->fill($savedata)->save();
+
+        return redirect()->route('bulletin-board.index')->with('flash_message', '新規投稿しました');
+    }
+
+
+
+    public function show(Request $request, $id) {
+    $post = Post::findOrFail($id);
+
+    return view('bulletin-boards.show', ['post' => $post]);
+    }
+
+    // public function edit($id) {
+
+    //     $id = DB::table('posts')
+    //     ->select('name','subject','message')
+    //     ->find($id);
+
+    //     return view('bulletin-boards.edit', ['post'=> $id]);
+    
+    // }
+
+    public function edit($id) {
+
+    $post = Post::findOrFail($id);
+    dd($id);
+    return view('bulletin-boards.edit', ['post' => $post]);
+    }
+
+
+    
+
+
+    public function update(PostRequest $request) {
+
         $savedata = [
             'name' => $request->name,
             'subject' => $request->subject,
@@ -33,18 +77,23 @@ class PostsController extends Controller
             'category_id' => $request->category_id,
         ];
     
-        $post = new Post();
+        $post = new Post;
         $post->fill($savedata)->save();
     
-        return redirect()->route('bulletin-board.index')->with('flash_message', '新規投稿しました');
+        return redirect()->route('bulletin-board.index')->with('flash_message', '投稿を更新しました');
     }
 
-    public function show(Request $request, $id)
-{
-    $post = Post::findOrFail($id);
+    public function destroy($id) {
+        $post = Post::findOrFail($id);
+        dd($id);
+        
+        $post->comments()->delete(); // ←★コメント削除実行
+        $post->delete();  // ←★投稿削除実行
+        
+        return redirect()->route('bulletin-board.index')->with('flash_message', '投稿を削除しました');
+    }
 
-    return view('bulletin-boards.show', [
-        'post' => $post,
-    ]);
-}
+
+
+
 }
