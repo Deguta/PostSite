@@ -23,7 +23,7 @@
 
                 <div class="form-group">
                     <label for="subject">名前</label>
-                    <input id="name" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}" type="text">
+                    <input id="name" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : ''}}" value="{{ old('name') }}" type="text">
                     @if ($errors->has('name'))
                         <div class="invalid-feedback">
                             {{ $errors->first('name') }}
@@ -33,13 +33,14 @@
  
                 <div class="form-group">
                     <label for="subject">カテゴリー</label>
-                    <input id="category_id" name="category_id" class="form-control {{ $errors->has('category_id') ? 'is-invalid' : '' }}" value="{{ old('category_id') }}" type="text">
-                    @if ($errors->has('category_id'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('category_id') }}
-                        </div>
-                    @endif
+                        {{--  <select type="text" class="form-control {{ $errors->has('category') ? 'is-invalid' : ''}}" value="{{ old('category') }}"  name="category">  --}}
+                        <select type="text" class="form-contro" name="category">
+                        @foreach($study as $studies)
+                            <option value="{{ $studies }}">{{ $studies }}</option>
+                        @endforeach
+                        </select>
                 </div>
+             
  
                 <div class="form-group">
                     <label for="subject">件名</label>
@@ -75,3 +76,10 @@
 @endsection
  
 @include('layout.bulletin-board-footer')
+
+{{--  値の確認用
+   @if (isset( $score ))
+                <p>$score</p>
+                @else
+                <p>Hello</p>
+                @endif  --}}

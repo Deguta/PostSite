@@ -12,6 +12,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'message' => $faker->realText(200),    // 200文字のテキスト
         'created_at' => $faker->date('Y-m-d H:i:s', 'now'),
         'updated_at' => $faker->date('Y-m-d H:i:s', 'now'),
-        'category_id' => $faker->numberBetween(1,5),  //カテゴリーのNoを1から5までランダム
+        'category' => $faker->numberBetween(1,5),  //カテゴリーのNoを1から5までランダム
     ];
 });

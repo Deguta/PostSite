@@ -27,7 +27,7 @@ class PostRequest extends FormRequest
             'name' => 'required|max:40',
             'subject' => 'required|max:80',
             'message' => 'required|max:350',
-            'category_id' => 'required|integer',
+            'category' => 'required',
         ];
     }
 }

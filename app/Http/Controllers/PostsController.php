@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Config;
+// use Illuminate\Support\Facades\DB;
 
 
 class PostsController extends Controller {
@@ -16,21 +17,26 @@ class PostsController extends Controller {
         return view('bulletin-boards.index',['posts'=> $posts]);
     }
 
+
+
     public function create() {
-    
-    return view('bulletin-boards.create');
+        $study = Config::get('category.$gender');
+
+
+        return view('bulletin-boards.create',
+        ['study' => $study,]);
+
     }
- 
- 
-    /**
+
+    /*
      * バリデーション、登録データの整形など
      */
     public function store(PostRequest $request) {
         $savedata = [
             'name' => $request->name,
             'subject' => $request->subject,
+            'category' => $request->category,
             'message' => $request->message,
-            'category_id' => $request->category_id,
         ];
 
         $post = new Post();
@@ -60,12 +66,10 @@ class PostsController extends Controller {
     public function edit($id) {
 
     $post = Post::findOrFail($id);
-    dd($id);
+
     return view('bulletin-boards.edit', ['post' => $post]);
     }
 
-
-    
 
 
     public function update(PostRequest $request) {
@@ -73,8 +77,8 @@ class PostsController extends Controller {
         $savedata = [
             'name' => $request->name,
             'subject' => $request->subject,
+            'category' => $request->category,
             'message' => $request->message,
-            'category_id' => $request->category_id,
         ];
     
         $post = new Post;
@@ -85,8 +89,6 @@ class PostsController extends Controller {
 
     public function destroy($id) {
         $post = Post::findOrFail($id);
-        dd($id);
-        
         $post->comments()->delete(); // ←★コメント削除実行
         $post->delete();  // ←★投稿削除実行
         

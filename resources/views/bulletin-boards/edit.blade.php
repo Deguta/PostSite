@@ -21,9 +21,17 @@
                 <td>{!! nl2br(e($post->message)) !!}</td>
             </tr>
 
-        <form method="POST" action="{{ route('bulletin-board.update', $post->id )}}">
+             @if (isset( $name ))
+            <p>$name</p>
+            @else
+            <p>Hello</p>
+            @endif
+
+        <form method="GET" action="{{ route('bulletin-board.update', $post )}}">
             @csrf
             @method('PUT')
+
+           
 
             <fieldset class="mb-4">
 
@@ -39,10 +47,10 @@
  
                 <div class="form-group">
                     <label for="subject">カテゴリー</label>
-                    <input id="category_id" name="category_id" class="form-control {{ $errors->has('category_id') ? 'is-invalid' : '' }}" value="{{ old('category_id') }}" type="text">
-                    @if ($errors->has('category_id'))
+                    <input id="category" name="category" class="form-control {{ $errors->has('category') ? 'is-invalid' : '' }}" value="{{ old('category') }}" type="text">
+                    @if ($errors->has('category'))
                         <div class="invalid-feedback">
-                            {{ $errors->first('category_id') }}
+                            {{ $errors->first('category') }}
                         </div>
                     @endif
                 </div>

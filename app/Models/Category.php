@@ -8,7 +8,11 @@ class Category extends Model
 {
     public function posts()
     {
-        // カテゴリは複数のポストを持つ
         return $this->hasMany('App\Models\Post');
     }
+
+    protected $fillable = [
+        'name',
+        
+    ];
 }

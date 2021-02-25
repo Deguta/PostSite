@@ -118,8 +118,8 @@ return [
 
     'attributes' => [
             'name' => '名前',
-            'category_id' =>'カテゴリー',
             'subject' =>'件名',
+            'category' =>'カテゴリー',
             'message' => '投稿内容',
             'comment'=> 'コメント',
             'name.required' => '名前を入力してください', //カラム名と.(ドット)とバリデーションを組み合わせることにより細かいエラー文を出せる。
@@ -128,8 +128,7 @@ return [
             'subject.max' => '件名は80文字以内で入力してください',
             'message.required' => 'メッセージを入力してください',
             'message.max' => 'メッセージは350文字以内で入力してください',
-            'category_id.required' => 'カテゴリーを選択してください',
-            'category_id.integer' => 'カテゴリーの入力形式が不正です',
+            'category.required' => 'カテゴリーを選択してください',
             'comment.required' => 'コメントを入力して下さい',
             'comment.max' => 'コメントは350文字以内にして下さい',
 ],

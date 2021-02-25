@@ -38,24 +38,27 @@
         @foreach ($posts as $post)
             <tr>
                 <td>{{ $post->id }}</td>
-                <td>{{ optional($post->category)->name }}</td>
+                <td>{{ $post->category }}</td>
                 <td>{{ $post->created_at->format('Y.m.d') }}</td>
                 <td>{{ $post->name }}</td>
                 <td>{{ $post->subject }}</td>
                 <td>{!! nl2br(e(Str::limit($post->message, 100))) !!}
                 @if ($post->comments->count() >= 1)
-                    <p><span class="badge badge-primary">コメント：{{ $post->comments->count() }}件</span></p> //countでコメントが何件あるか表示できる
+                    <p><span class="badge badge-primary">
+                    現在のコメント数は{{ $post->comments->count() }}件
+                    </span></p> //countでコメントが何件あるか表示できる
                 @endif
                 </td>
                 <td class="text-nowrap">
-                    <p><a href="{{ action('PostsController@show', $post->id) }}" class="btn btn-primary btn-sm">詳細</a></p>
-                    <p><a href="{{ action('PostsController@edit', $post->id) }}" class="btn btn-info btn-sm">編集</a></p>
+                    <p><a href="{{ route('bulletin-board.show', $post) }}" class="btn btn-primary btn-sm">詳細</a></p>
+                    <p><a href="{{ action('PostsController@edit', $post) }}" class="btn btn-info btn-sm">編集</a></p>
                     <p>
-                        <form method="POST" action="{{ action('PostsController@destroy', $post->id) }}">
+                        <form method="POST" action="{{ route('bulletin-board.destroy', $post) }}">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger btn-sm">削除</button>
                         </form>
+                        
                     </p>
                 </td>
             </tr>
