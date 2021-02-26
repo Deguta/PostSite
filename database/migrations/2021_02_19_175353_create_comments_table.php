@@ -14,11 +14,11 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id'); //コメントの投稿をしたら自動で付随される。
             $table->timestamps();
             $table->string('name');
             $table->text('comment');
-            $table->unsignedBigInteger('post_id'); //post_idの外部キー
+            $table->unsignedBigInteger('post_id'); //外部キー
         });
     }
 
