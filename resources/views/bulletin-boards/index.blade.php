@@ -34,10 +34,14 @@
             <th>処理</th>
         </tr>
         </thead>
-        <form metoad="GET" action="{{ route('bulletin-board.index') }}"class="form-inline my-2 my-lg-0">
-            <input name="search" class="form-control mr-sm-2" type="search" placeholder="キーワードを入力" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
-        </form>
+            <div class="mt-4 mb-4">
+                <form class="form-inline" method="GET" action="{{ route('bulletin-board.index') }}">
+                    <div class="form-group">
+                        <input type="text" name="searchword" value="{{$searchword}}" class="form-control" placeholder="名前を入力してください">
+                    </div>
+                    <input type="submit" value="検索" class="btn btn-info ml-2">
+                </form>
+            </div>
         <tbody id="tbl">
         @foreach ($posts as $post)
             <tr>
@@ -57,7 +61,7 @@
                     <p><a href="{{ route('bulletin-board.show', $post) }}" class="btn btn-primary btn-sm">詳細</a></p>
                     <p><a href="{{ action('PostsController@edit', $post) }}" class="btn btn-info btn-sm">編集</a></p>
                     <p>
-                        <form method="POST" action="{{ route('bulletin-board.destroy', $post) }}">
+                        <form method="POST" action="{{ route('bulletin-board.destroy', $post->id) }}">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger btn-sm">削除</button>
@@ -70,8 +74,8 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center mb-5">
-    {{ $posts->links() }} //ページネーションでここに呼び出す
-    </div>
+    {{ $posts->appends(['searchword' => $searchword])->links() }}
+</div>
 </div>
 @endsection
  

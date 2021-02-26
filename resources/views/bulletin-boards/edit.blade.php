@@ -13,21 +13,17 @@
 <div class="container mt-4">
     <div class="border p-4">
         <h1 class="h4 mb-4 font-weight-bold">
-            投稿更新ページ
+            編集と投稿更新ページ
         </h1>
+
             <tr>
                 <td>{{ $post->name }}</td>
                 <td>{{ $post->subject }}</td>
                 <td>{!! nl2br(e($post->message)) !!}</td>
             </tr>
 
-             @if (isset( $name ))
-            <p>$name</p>
-            @else
-            <p>Hello</p>
-            @endif
-
-        <form method="GET" action="{{ route('bulletin-board.update', $post )}}">
+            
+        <form method="POST" action="{{ route('bulletin-board.update', $post )}}">
             @csrf
             @method('PUT')
 
@@ -47,14 +43,14 @@
  
                 <div class="form-group">
                     <label for="subject">カテゴリー</label>
-                    <input id="category" name="category" class="form-control {{ $errors->has('category') ? 'is-invalid' : '' }}" value="{{ old('category') }}" type="text">
-                    @if ($errors->has('category'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('category') }}
-                        </div>
-                    @endif
+                        {{--  <select type="text" class="form-control {{ $errors->has('category') ? 'is-invalid' : ''}}" value="{{ old('category') }}"  name="category">  --}}
+                        <select type="text" class="form-control" name="category">
+                        @foreach($study as $studies)
+                            <option value="{{ $studies }}">{{ $studies }}</option>
+                        @endforeach
+                        </select>
                 </div>
- 
+
                 <div class="form-group">
                     <label for="subject">件名</label>
                     <input id="subject" name="subject" class="form-control {{ $errors->has('subject') ? 'is-invalid' : '' }}" value="{{ old('subject') }}" type="text">

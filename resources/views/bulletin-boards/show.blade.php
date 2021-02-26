@@ -20,7 +20,7 @@
             <p>
                 <span>{{ $post->name }}</span>
                 <time>{{ $post->updated_at->format('Y.m.d H:i') }}</time>
-                {{--  {{ $post->category->name }}  --}}
+                {{ $post->category }}
                 {{ $post->id }}
             </p>
         </div>
