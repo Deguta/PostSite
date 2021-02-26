@@ -18,7 +18,7 @@
         <!-- 投稿情報 -->
         <div class="summary">
             <p>
-                <span>{{ $post->name }}</span>  
+                <span>{{ $post->name }}</span>
                 <time>{{ $post->updated_at->format('Y.m.d H:i') }}</time>
                 {{--  {{ $post->category->name }}  --}}
                 {{ $post->id }}
@@ -51,7 +51,7 @@
         <form class="mb-4" method="POST" action="{{ route('comment.store') }}">
             @csrf
 
-            <inputname="post_id" type="hidden" value="{{ $post->id }}">
+            <input name="post_id" type="hidden" value="{{ $post->id }}">
 
             <div class="form-group">
                 <label for="subject">名前</label>

@@ -18,8 +18,7 @@ class CreateCommentsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->text('comment');
-            $table->string('is_deleted', 4)->default('0');
-            $table->integer('post_id'); //外部キー
+            $table->unsignedBigInteger('post_id'); //post_idの外部キー
         });
     }
 

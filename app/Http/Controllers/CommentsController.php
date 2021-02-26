@@ -10,7 +10,7 @@ use App\Http\Requests\CommentRequest;
 
 class CommentsController extends Controller
 {
-    public function store(CommentRequest $request){ 
+    public function store(CommentRequest $request){
         $savedata = [
         'post_id' => $request->post_id,
         'name' => $request->name,

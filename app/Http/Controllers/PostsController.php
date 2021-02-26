@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Config;
-// use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 
 class PostsController extends Controller {
@@ -33,7 +33,7 @@ class PostsController extends Controller {
      */
     public function store(PostRequest $request) {
         $inputs = $request->all();
-        
+
         $savedata = [
             'name' => $request->name,
             'subject' => $request->subject,

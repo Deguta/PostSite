@@ -20,7 +20,6 @@ class CreatePostsTable extends Migration
             $table->string('subject');
             $table->string('category');
             $table->text('message');
-            $table->string('is_deleted', 4)->default('0');
         });
     }
 

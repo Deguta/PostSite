@@ -18,10 +18,5 @@ class Post extends Model
         // 投稿は複数のコメントを持つ
         return $this->hasMany('App\Models\Comment');
     }
- 
-    public function category()
-    {
-        // 投稿は1つのカテゴリーに属する
-        return $this->belongsTo('App\Models\Category');
-    }
+
 }
