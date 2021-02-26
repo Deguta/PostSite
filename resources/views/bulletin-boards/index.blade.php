@@ -34,6 +34,10 @@
             <th>処理</th>
         </tr>
         </thead>
+        <form metoad="GET" action="{{ route(bulletin-board.index) }}"class="form-inline my-2 my-lg-0">
+            <input name="search" class="form-control mr-sm-2" type="search" placeholder="キーワードを入力" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+        </form>
         <tbody id="tbl">
         @foreach ($posts as $post)
             <tr>

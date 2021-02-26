@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <label for="subject">カテゴリー</label>
                         {{--  <select type="text" class="form-control {{ $errors->has('category') ? 'is-invalid' : ''}}" value="{{ old('category') }}"  name="category">  --}}
-                        <select type="text" class="form-contro" name="category">
+                        <select type="text" class="form-control" name="category">
                         @foreach($study as $studies)
                             <option value="{{ $studies }}">{{ $studies }}</option>
                         @endforeach

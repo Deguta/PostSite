@@ -20,8 +20,8 @@ class PostsController extends Controller {
 
 
     public function create() {
-        $study = Config::get('category.$gender');
-
+        $study = Config::get('category.$language');
+        
 
         return view('bulletin-boards.create',
         ['study' => $study,]);
@@ -32,6 +32,8 @@ class PostsController extends Controller {
      * バリデーション、登録データの整形など
      */
     public function store(PostRequest $request) {
+        $inputs = $request->all();
+        
         $savedata = [
             'name' => $request->name,
             'subject' => $request->subject,
@@ -78,6 +80,7 @@ class PostsController extends Controller {
             'name' => $request->name,
             'subject' => $request->subject,
             'category' => $request->category,
+
             'message' => $request->message,
         ];
     

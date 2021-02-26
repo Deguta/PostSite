@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('subject');
-            $table->tinyInteger('category');
+            $table->string('category');
             $table->text('message');
             $table->string('is_deleted', 4)->default('0');
         });
