@@ -5,15 +5,15 @@
 @section('description', '投稿一覧ページの説明文')
 @section('pageCss')
 <link href="/css/bulletin-board/sticky-footer.css" rel="stylesheet">
+<link href="/css/bulletin-board/index-list.css" rel="stylesheet">
+
 @endsection
  
 @include('layout.bulletin-board-header')
  
 @section('content')
 <div class="mt-4 mb-4">
-    <a href="{{ route('bulletin-board.create') }}" class="btn btn-primary">
-        投稿の新規作成
-    </a>
+    <a href="{{ route('bulletin-board.create') }}"  class="create-btn m-auto">投稿の新規作成はこちらです</a>
 </div>
 @if (session('flash_message'))
     <div class="alert alert-success mt-4 mb-4">
@@ -36,10 +36,19 @@
         </thead>
             <div class="mt-4 mb-4">
                 <form class="form-inline" method="GET" action="{{ route('bulletin-board.index') }}">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="テキスト入力欄">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">ボタン</button>
+                    </span>
+                </div>
                     <div class="form-group">
                         <input type="text" name="searchword" value="{{$searchword}}" class="form-control" placeholder="名前を入力してください">
                     </div>
                     <input type="submit" value="検索" class="btn btn-info ml-2">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">ボタン</button>
+                    </span>
                 </form>
             </div>
         <tbody id="tbl">

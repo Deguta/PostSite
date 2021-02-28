@@ -12,32 +12,31 @@
 @section('content')
 <div class="container mt-4">
     <div class="border p-4">
-        <!-- 件名 -->
-        <h1 class="h4 mb-4">{{ $post->subject }}</h1>
+        <div class="card m-auto" style="width:45rem;">
+            <div class="card-header h2 font-weight-bold align-items-center text-center">
+                投稿者 {{ $post->name }} さん
+            </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item font-weight-bold d-flex justify-content-center mt-3 h5">カテゴリー
+                        <p class="list-subject font-weight-normal ml-3">{{ $post->category }}</p>
+                    </li>
 
-        <!-- 投稿情報 -->
-        <div class="summary">
-            <p>
-                <span>{{ $post->name }}</span>
-                <time>{{ $post->updated_at->format('Y.m.d H:i') }}</time>
-                {{ $post->category }}
-                {{ $post->id }}
-            </p>
+                    <li class="list-group-item font-weight-bold d-flex justify-content-center mt-3 h5">件名
+                        <p class="list-subject font-weight-normal ml-3 ">{{ $post->subject }}</p>
+                    </li>
+                    <li class="list-group-item"> {!! nl2br(e($post->message)) !!}</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- 本文 -->
-        <p class="mb-5">
-            {!! nl2br(e($post->message)) !!}
-        </p>
-
         <section>
-            <h2 class="h5 mb-4">コメント</h2>
- 
+            <h2 class="h5 mb-4 mt-5">コメント一覧になります</h2>
+
             @forelse($post->comments as $comment)
-                <div class="border-top p-4">
+                <div class="border-top p-4 mt-2 ">
                     <time class="text-secondary">
-                        {{ $comment->name }} /
-                        {{ $comment->created_at->format('Y.m.d H:i') }} /
+                        {{ $comment->name }} 
+                        {{ $comment->created_at->format('Y.m.d H:i') }} 
                         {{ $comment->id }}
                     </time>
                     <p class="mt-2">

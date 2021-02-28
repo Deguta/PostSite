@@ -1,0 +1,29 @@
+.create-btn {
+  width:500px;
+  padding: 0.5em;
+  margin: 10px 0;
+  display: block;
+  color: #fff !important;
+  background: #FF8300;
+  text-decoration: none;
+  font-weight: bold;
+  font-size:25px;
+  border-radius: 3px;
+  text-align:center;
+  text-decoration:none !important;
+  }
+
+a.create-btn:after {
+content: "";
+display: inline-block;
+width: 25px;
+height: 25px;
+margin: -3px 0 0 5px;
+background: url(../images/ei-pencil.png) no-repeat;
+background-size: contain;
+vertical-align: middle;
+}
+
+a.create-btn:hover {
+    background: #FFCE71;
+}

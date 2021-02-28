@@ -1,0 +1,30 @@
+.img-box {
+  position:relative;
+  text-align: center;
+
+}
+
+.img-footer {
+  border: solid;
+  border-color: rgb(87, 64, 64);
+  width: 100%;
+  height: 400px;
+}
+
+
+ul {
+  position: absolute;/*絶対配置*/
+  color: red;/*文字は白に*/
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  list-style: none;
+}
+
+
+.list-2 {
+  font-size: 20px;
+}
+
+
+
