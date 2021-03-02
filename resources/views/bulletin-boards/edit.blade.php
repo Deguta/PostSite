@@ -1,14 +1,7 @@
 @extends('layout.bulletin-board-common')
- 
 @section('title', 'PostSite 投稿ページ')
-@section('keywords', 'キーワード1,キーワード2,キーワード3')
-@section('description', '投稿ページの説明文')
-@section('pageCss')
 <link href="/css/bulletin-board/sticky-footer.css" rel="stylesheet">
-@endsection
- 
 @include('layout.bulletin-board-header')
- 
 @section('content')
 <div class="container mt-4">
     <div class="border p-4">

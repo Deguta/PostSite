@@ -1,19 +1,16 @@
 @extends('layout.bulletin-board-common')
- 
 @section('title', 'PostSite 投稿一覧表')
-@section('keywords', 'キーワード1,キーワード2,キーワード3')
-@section('description', '投稿一覧ページの説明文')
-@section('pageCss')
 <link href="/css/bulletin-board/sticky-footer.css" rel="stylesheet">
 <link href="/css/bulletin-board/index-list.css" rel="stylesheet">
-
-@endsection
- 
 @include('layout.bulletin-board-header')
  
 @section('content')
-<div class="mt-4 mb-4">
-    <a href="{{ route('bulletin-board.create') }}"  class="create-btn m-auto">投稿の新規作成はこちらです</a>
+<div class="mt-4 mb-4 d-flex justify-content-between" >
+    <a href="{{ route('bulletin-board.create') }}"  class="create-btn  ">投稿の新規作成はこちらです</a>
+    <form class="form-inline " method="GET" action="{{ route('bulletin-board.index') }}">
+        <input type="text" name="searchword" value="{{$searchword}}"  class="form-control mr-sm-2"  aria-label="searchword" placeholder="キーワードを入力">
+        <button type="submit" class="btn btn-info">検索</button>
+    </form>
 </div>
 
 @if (session('flash_message'))
