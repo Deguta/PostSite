@@ -7,8 +7,8 @@
         <a class="navbar-brand font-weight-bold" href="{{ route('bulletin-board.index') }}">Study-Of-PostSite</a>
     </div>
 </header>
-<p class="border-danger bg-danger">
-<img src="{{ asset('/css/images/black-board.png') }}" alt="黒板">
+<p class="header-image">
+    <img src="{{ asset('/css/images/black-board.jpg') }}" id="black-board-image" alt="黒板">
 </p>
 
 @section('content')
@@ -26,6 +26,23 @@
         {{ session('flash_message') }}
     </div>
 @endif
+
+@foreach ($posts as $post)
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title d-flex">投稿者
+         <p>{{ $post->name }}</p>
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+@endforeach
+
+
+
 
 <div class="table-responsive">
     <table class="table table-hover">
@@ -71,6 +88,7 @@
             @endforeach
         </tbody>
     </table>
+
     <div class="d-flex justify-content-center mb-5">
         {{ $posts->appends(['searchword' => $searchword])->links() }}
     </div>

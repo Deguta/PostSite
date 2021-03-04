@@ -1,6 +1,7 @@
 @extends('layout.bulletin-board-common')
-@section('title', 'PostSite 投稿一覧表')
-<link href="/css/bbs/style.css" rel="stylesheet">
+@section('title', '投稿の詳細ページ')
+<link href="/css/bulletin-board/show.css" rel="stylesheet">
+<link href="{{ asset('bulletin-board/show.css') }}" rel="stylesheet">
 <header>
           @component('components.header')
             @slot('header')
@@ -9,24 +10,32 @@
 </header>
 @section('content')
 
+
 <div class="container mt-4">
     <div class="border p-4">
-        <div class="card m-auto" style="width:45rem;">
-            <div class="card-header h2 font-weight-bold align-items-center text-center">
-                投稿者 {{ $post->name }} さん
-            </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item font-weight-bold d-flex justify-content-center mt-3 h5">カテゴリー
-                        <p class="list-subject font-weight-normal mb-0">{{ $post->category }}</p>
-                    </li>
 
-                    <li class="list-group-item font-weight-bold d-flex justify-content-center mt-3 h5">件名
-                        <p class="list-subject font-weight-normal mb-0 ">{{ $post->subject }}</p>
-                    </li>
-                    <li class="list-group-item"> {!! nl2br(e($post->message)) !!}</li>
-                </ul>
-            </div>
+        <table class="table table-hover table-striped w-75 mx-auto">
+            <thead>
+                <td class="w-50 text-center font-weight-bold">投稿者</td>
+                <td class="w-50 text-center">{{ $post->name }} さん</td>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="text-center font-weight-bold">カテゴリー</td>
+                    <td class="text-center">{{ $post->category }}</td>
+                </tr>
+                <tr>
+                    <td class="text-center font-weight-bold">件名</td>
+                    <td class="text-center">{{ $post->subject }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="post-show">投稿内容
+            <p class="font-weight-normal">{!! nl2br(e($post->message)) !!}</p>
         </div>
+
 
         <section>
             <h2 class="h5 mb-4 mt-5">コメント一覧になります</h2>
@@ -48,7 +57,7 @@
         </section>
         <form class="mb-4" method="POST" action="{{ route('comment.store') }}">
             @csrf
-{{--    post_idは外部キーになります。post_idはコメント投稿したら自動で付随されるのでtype="hidden"にしている。勝手にユーザーが変更できない様にしている。  --}}
+                            {{--    post_idは外部キーになります。post_idはコメント投稿したら自動で付随されるのでtype="hidden"にしている。勝手にユーザーが変更できない様にしている。  --}}
             <input name="post_id" type="hidden" value="{{ $post->id }}">
 
             <div class="form-group">
@@ -94,6 +103,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 
 @include('layout.bulletin-board-footer')
