@@ -1,8 +1,14 @@
 @extends('layout.bulletin-board-common')
 @section('title', 'PostSite 投稿一覧表')
 <link href="/css/bbs/style.css" rel="stylesheet">
-@include('layout.bulletin-board-header')
+<header>
+          @component('components.header')
+            @slot('header')
+            @endslot
+          @endcomponent
+</header>
 @section('content')
+
 <div class="container mt-4">
     <div class="border p-4">
         <div class="card m-auto" style="width:45rem;">
@@ -11,11 +17,11 @@
             </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item font-weight-bold d-flex justify-content-center mt-3 h5">カテゴリー
-                        <p class="list-subject font-weight-normal ml-3">{{ $post->category }}</p>
+                        <p class="list-subject font-weight-normal mb-0">{{ $post->category }}</p>
                     </li>
 
                     <li class="list-group-item font-weight-bold d-flex justify-content-center mt-3 h5">件名
-                        <p class="list-subject font-weight-normal ml-3 ">{{ $post->subject }}</p>
+                        <p class="list-subject font-weight-normal mb-0 ">{{ $post->subject }}</p>
                     </li>
                     <li class="list-group-item"> {!! nl2br(e($post->message)) !!}</li>
                 </ul>

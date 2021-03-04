@@ -1,12 +1,20 @@
 @extends('layout.bulletin-board-common')
-@section('title', 'PostSite 投稿一覧表')
+@section('title', 'Study-Of-PostSite 投稿一覧表')
 <link href="/css/bulletin-board/sticky-footer.css" rel="stylesheet">
 <link href="/css/bulletin-board/index-list.css" rel="stylesheet">
-@include('layout.bulletin-board-header')
- 
+<header class="navbar navbar-dark  navbar-expand-sm bg-primary ">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="{{ route('bulletin-board.index') }}">Study-Of-PostSite</a>
+    </div>
+</header>
+<p class="border-danger bg-danger">
+<img src="{{ asset('/css/images/black-board.png') }}" alt="黒板">
+</p>
+
 @section('content')
+
 <div class="mt-4 mb-4 d-flex justify-content-between" >
-    <a href="{{ route('bulletin-board.create') }}"  class="create-btn  ">投稿の新規作成はこちらです</a>
+    <a href="{{ route('bulletin-board.create') }}"  class="create-btn">投稿の新規作成はこちらです</a>
     <form class="form-inline " method="GET" action="{{ route('bulletin-board.index') }}">
         <input type="text" name="searchword" value="{{$searchword}}"  class="form-control mr-sm-2"  aria-label="searchword" placeholder="キーワードを入力">
         <button type="submit" class="btn btn-info">検索</button>
