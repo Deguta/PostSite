@@ -12,7 +12,7 @@
   <body>
     <header class="navbar navbar-dark  navbar-expand-sm bg-primary ">
       <div class="container">
-          <a class="navbar-brand font-weight-bold" href="{{ route('bulletin-board.index') }}">Study-Of-PostSite</a>
+          <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">Study-Of-PostSite</a>
           <div class="collapse navbar-collapse justify-content-end">
             <div class="navbar-nav">
               <a class="nav-item nav-link active" href="#">新規登録はこちら</a>
@@ -40,7 +40,7 @@
                 <p class="text-center h2-desc font-weight-bold">皆さんで学習のモチベーションを高め合いましょう!!</p>
 
                 <div class="text-center mt-5 mb-5">
-                    <a href="{{ route('bulletin-board.create') }}" class="btn btn-danger btn-lg"><i class="fa fa-edit mr-2"></i>投稿投稿ページはこちら</a>
+                    <a href="{{ route('bulletin-board.create') }}" class="btn btn-danger btn-lg"><i class="fa fa-edit mr-2"></i>新規投稿ページはこちら</a>
                 </div>
             </div>
         </div>

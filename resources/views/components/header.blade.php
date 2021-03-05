@@ -1,6 +1,6 @@
 <header class="navbar navbar-dark bg-primary ">
-        <div class="container">
-            <a class="navbar-brand font-weight-bold" href="{{ route('bulletin-board.index') }}">Study-Of-PostSite</a>
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">Study-Of-PostSite</a>
         </div>
 </header>
 

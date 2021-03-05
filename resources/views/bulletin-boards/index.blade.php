@@ -4,7 +4,7 @@
 <link href="/css/bulletin-board/index-list.css" rel="stylesheet">
 <header class="navbar navbar-dark  navbar-expand-sm bg-primary ">
     <div class="container">
-        <a class="navbar-brand font-weight-bold" href="{{ route('bulletin-board.index') }}">Study-Of-PostSite</a>
+        <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">Study-Of-PostSite</a>
     </div>
 </header>
 <p class="header-image">
