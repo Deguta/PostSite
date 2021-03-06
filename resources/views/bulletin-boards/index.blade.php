@@ -28,16 +28,48 @@
 @endif
 
 @foreach ($posts as $post)
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title d-flex">投稿者
-         <p>{{ $post->name }}</p>
-    </h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+<div class="row no-gutters">
+    <div class="card col-md-8 mt-5 mx-auto">
+        <div class="h2 card-header text-center back-color-gradient d-flex justify-content-lg-around">
+            <p >投稿者  {{ $post->name }}  さん
+                <p class="h5 mt-2"> 投稿日  {{ $post->created_at->format('Y.m.d') }}</p>
+            </p>
+        </div>
+        <div class="h4 card-header text-center back-color-gradient">
+          <section>カテゴリー  {{ $post->category }} </section>
+        </div>
+        <div class="h4 card-header text-center back-color-gradient">
+          <section>タイトル {{ $post->subject }} </section>
+        </div>
+        <div class="card-body">
+            
+            <p class="card-text left">
+                {!! nl2br(e(Str::limit($post->message, 128))) !!}
+                <a href="{{ route('bulletin-board.show', $post) }}" class="btn btn-primary ">続きを読む</a>
+            </p>
+            @if ($post->comments->count() >= 1)
+            <p>
+                <span class="badge badge-primary">
+                現在のコメント数は{{ $post->comments->count() }}件
+                </span>
+            </p>
+            @endif
+
+        </div>
+        <div class="card-footer d-inline-block d-flex justify-content-between">
+                <!-- <p><a href="{{ route('bulletin-board.show', $post) }}" class="btn btn-primary btn-sm">詳細</a></p> -->
+                <p><a href="{{ action('PostsController@edit', $post) }}" class="btn btn-info btn-sm">編集</a></p>
+            
+                <form method="POST" action="{{ route('bulletin-board.destroy', $post->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger btn-sm">削除</button>
+                </form>
+                </p>
+
+        </div>
+    </div>
+    
 </div>
 @endforeach
 
