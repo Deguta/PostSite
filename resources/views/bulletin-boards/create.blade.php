@@ -1,6 +1,5 @@
 @extends('layout.bulletin-board-common')
 @section('title', 'PostSite 投稿ページ')
-<link href="/css/bulletin-board/sticky-footer.css" rel="stylesheet">
 <header>
         @component('components.header')
             @slot('header')

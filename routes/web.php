@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
 
 Route::resource('bulletin-board', 'PostsController', ['only' => ['index','create', 'store','show','edit', 'update','destroy']]);

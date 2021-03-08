@@ -1,6 +1,6 @@
 @extends('layout.bulletin-board-common')
-@section('title', 'PostSite 投稿ページ')
-<link href="/css/bulletin-board/sticky-footer.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('/css/bulletin-board/edit.css') }}" >
+@section('title', '編集と更新ページ')
 <header>
         @component('components.header')
             @slot('header')
@@ -11,24 +11,17 @@
 <div class="container mt-4">
     <div class="border p-4">
         <h1 class="h4 mb-4 font-weight-bold">
-            編集と投稿更新ページ
+            編集と更新ページ
         </h1>
-
             <tr>
                 <td>{{ $post->name }}</td>
                 <td>{{ $post->subject }}</td>
                 <td>{!! nl2br(e($post->message)) !!}</td>
             </tr>
-
-            
         <form method="POST" action="{{ route('bulletin-board.update', $post )}}">
             @csrf
             @method('PUT')
-
-           
-
-            <fieldset class="mb-4">
-
+            <fieldset class="edit-form mb-4">
                 <div class="form-group">
                     <label for="subject">名前</label>
                     <input id="name" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}" type="text">
@@ -38,7 +31,7 @@
                         </div>
                     @endif
                 </div>
- 
+
                 <div class="form-group">
                     <label for="subject">カテゴリー</label>
                         {{--  <select type="text" class="form-control {{ $errors->has('category') ? 'is-invalid' : ''}}" value="{{ old('category') }}"  name="category">  --}}

@@ -1,0 +1,9 @@
+/* formクラス  name 750px以下のcss */
+
+@media screen and (max-width: 750px) {
+  .edit-form {
+    margin-top: 50px;
+  }
+}
+/* formクラス  name 750px以下のcss 終了*/
+

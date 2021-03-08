@@ -1,4 +1,15 @@
-.post-show {
-  font-weight: bold; 
-  border:3px double #0000ff;
+/* cardクラス  name 750px以下のcss */
+
+@media screen and (max-width: 750px) {
+  .name {
+    font-size: 20px;
+    line-height:33px;
+  }
+}
+/* cardクラス  name 750px以下のcss 終了*/
+
+@media screen and (max-width: 750px) {
+  .subject {
+    font-size: 18px;
+    }
 }

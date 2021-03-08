@@ -2,11 +2,11 @@
   <html lang="ja">
   <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 表示領域を、各端末の画面幅に合わせて、いい感じに調整する」という内容です。 -->
   <title>トップページ</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link href="/css/bulletin-board/top-page.css" rel="stylesheet">
-  
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ asset('/css/bulletin-board/top.css') }}" >
+  <link rel="stylesheet" href="{{ asset('/css/bulletin-board/top.css') }}" media="screen and (max-width:750px)" >
   </head>
 
   <body>
@@ -22,9 +22,11 @@
       </div>
     </header>
 
-    <img src="{{ asset('/css/images/top-image.jpg') }}" id="top-image" alt="トップ画像">
-    <p class="top-p text-warning font-weight-bold mb-5">皆んなの学習状況を共有しよう!!</p>
-    <a href="{{ route('bulletin-board.index') }}"  class="create-btn mt-5  font-weight-bold">投稿一覧ページはこちらです</a>
+    <div class="header-image">
+      <img src="{{ asset('/css/images/top-image.jpg') }}" id="top-image" alt="トップ画像">
+      <p class="top-p text-warning font-weight-bold mb-5">プログラミング学習を共有しよう!!</p>
+      <a href="{{ route('bulletin-board.index') }}"  class="create-btn mt-5  font-weight-bold">投稿一覧ページはこちらです</a>
+    </div>
 
     <section class="border border-dark bg-light">
       <div class="container">
@@ -35,12 +37,12 @@
                       Study-Of-PostSiteとは?
                     </h1>
                 </div>
-                <p class="text-center h2-desc font-weight-bold">皆さんの学習状況を投稿しあうサイトになります。</p>
+                <p class="text-center h2-desc font-weight-bold">皆さんの学習状況を投稿しあう投稿サイトになります。</p>
                 <p class="text-center h2-desc font-weight-bold">誹謗中傷の投稿は削除させていただきます。</p>
                 <p class="text-center h2-desc font-weight-bold">皆さんで学習のモチベーションを高め合いましょう!!</p>
 
                 <div class="text-center mt-5 mb-5">
-                    <a href="{{ route('bulletin-board.create') }}" class="btn btn-danger btn-lg"><i class="fa fa-edit mr-2"></i>新規投稿ページはこちら</a>
+                    <a href="{{ route('bulletin-board.create') }}" class="btn btn-danger btn-lg"><i class="fa fa-edit mr-2"></i>投稿はこちらになります</a>
                 </div>
             </div>
         </div>
