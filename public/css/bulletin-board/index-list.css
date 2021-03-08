@@ -70,6 +70,10 @@ a.create-btn:hover {
     height: 150px;
   }
 
+  .header-tag {
+    margin-left: 104px;
+  }
+
   .create-btn {
     width:230px;
     margin: 20px 0px;

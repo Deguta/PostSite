@@ -7,8 +7,8 @@
     <a class="header-tag navbar-brand font-weight-bold " href="{{ url('/') }}">Study-Of-PostSite</a>
 </header>
 <p><img src="{{ asset('/css/images/black-board.jpg') }}"id="black-board-image" alt="黒板">
-    <p class="header-comment text-white font-weight-bold">Study-Of-PostSite-List</p>
-    <p class="header-text text-white font-weight-bold ">自分のプログラミング勉強を共有しよう</p>
+    <p class="header-comment text-white font-weight-bold">Study-Of-PostSite 投稿一覧表</p>
+    <p class="header-text text-white font-weight-bold ">自分のプログラミング勉強を共有しよう!!</p>
 </p>
 
 

@@ -57,7 +57,7 @@
     </section>
     <form class="mb-4" method="POST" action="{{ route('comment.store') }}">
         @csrf
-                        {{--    post_idは外部キーになります。post_idはコメント投稿したら自動で付随されるのでtype="hidden"にしている。勝手にユーザーが変更できない様にしている。  --}}
+{{--    post_idは外部キーになります。post_idはコメント投稿したら自動で付随されるのでtype="hidden"にしている。勝手にユーザーが変更できない様にしている。  --}}
         <input name="post_id" type="hidden" value="{{ $post->id }}">
 
         <div class="form-group">

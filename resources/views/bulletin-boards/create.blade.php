@@ -1,5 +1,5 @@
 @extends('layout.bulletin-board-common')
-@section('title', 'PostSite 投稿ページ')
+@section('title', 'Study-Of-PostSite 新規投稿ページ')
 <header>
         @component('components.header')
             @slot('header')
@@ -9,7 +9,7 @@
 <div class="container mt-4">
     <div class="border p-4">
         <h1 class="h4 mb-4 font-weight-bold">
-            投稿の新規作成
+            投稿の新規作成ページ
         </h1>
 
         <form method="POST" action="{{ route('bulletin-board.store') }}">
