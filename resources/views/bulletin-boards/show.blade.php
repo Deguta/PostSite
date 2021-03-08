@@ -94,6 +94,9 @@
             @method('DELETE')
             <button class="btn btn-danger">削除する</button>
         </form>
+
+        <a class="btn btn-secondary" href="{{ route('bulletin-board.index') }}">キャンセル</a>
+
     </div>
 
 @endsection
