@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="{{ asset('/css/bulletin-board/index-list.css') }}" >
 <link rel="stylesheet" href="{{ asset('/css/bulletin-board/index-list.css') }}" media="screen and (max-width:750px)" >
 
-<header class="navbar navbar-dark  navbar-expand-sm bg-primary">
-        <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">Study-Of-PostSite</a>
+<header class="navbar navbar-dark bg-primary">
+    <a class="header-tag navbar-brand font-weight-bold " href="{{ url('/') }}">Study-Of-PostSite</a>
 </header>
 <p><img src="{{ asset('/css/images/black-board.jpg') }}"id="black-board-image" alt="黒板">
     <p class="header-comment text-white font-weight-bold">Study-Of-PostSite-List</p>
