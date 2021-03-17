@@ -41,7 +41,7 @@
             <section>カテゴリー　{{ $post->category }} </section>
         </div>
         <div class="card-body">
-            <div class="h5 border-bottom border-dark pb-2 text-center">
+            <div class="h5 mb-3 p-3 border-bottom border-dark pb-2 text-center">
                 <section class="subject">タイトル　{{ $post->subject }} </section>
             </div>
 
