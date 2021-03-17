@@ -1,78 +1,78 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<!-- ![画像](/ReadmeFolder/logo.png) -->
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+# 概要
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+[→[アプリケーションのリンク先はこちら](URL)]</br>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# 制作背景
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# システム概要
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![システムフロー](/ReadmeFolder/systemflow.png)
 
-## Laravel Sponsors
+# 操作説明
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+# こだわり
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+# 使用技術
+ 
+**バックエンド**<br>
+PHP 7.2.34 / Laravel 6.20.5
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**フロントエンド**<br>
+HTML / CSS / javascript / jQuery 3.2.1 / Vue.js(現在学習中のため今後組み込む)
+
+**インフラ**<br>
+mysql 8.0.22 / AWS(EC2,S3)
+
+**その他の使用技術**<br>
+Pusher / git(gitHub) / Visual Studio Code / Gmail
+ 
+# AWS構成図
+![画像](/ReadmeFolder/aws.png)
+
+# DB設計
+### ・ ER図
+![画像](/ReadmeFolder/finaltable.png)
+### ・ 各種テーブル
+
+| **テーブル名** | **定義** |
+| ---- | ---- |
+| owners<br>(オーナー) | オーナーの登録情報 |
+| drivers<br>(ドライバー) | ドライバーの登録情報 |
+| owner_schedules<br>(オーナースケジュール) | ドライバーの車両貸出可能な日程 |
+| chats<br>(チャット) | 会話の内容 |
+| contracts<br>(コントラクト) | 契約確定後、契約内容を格納|
+
+
+# 苦労したところ
+
+### ①DB設計
+ER図を添付していますが、実際のアプリケーションとテーブル名やカラム名に相違があります。テーブルの命名規則の理解が曖昧ままDB設計をしており、キャメルケースを用いた記述をしてしまいました。開発終盤に気付きましたが、影響範囲が広すぎて修正が困難になりました。この失敗を二度と繰り返さないよう再度学習を行い、Qiitaにまとめています。初期設計の重要性を身に染みて学びました。[→[Qiita記事 リンク](https://qiita.com/tatsuya_1995/items/4b706fc40fe2f300bbc0)]
+
+### ②Laravelのマルチログイン機能
+ドライバーとオーナーで初期の登録方法やログインした後の挙動が変わるため、マルチログイン機能を実装する必要がありました。Laravelでは基本のログイン機能がついていますが、これを応用して２通りのログイン機能を作りました。変更が必要なファイルが多く、それぞれの関連性が分かっていなかったため、苦労しました。ここで３日以上も悩んだことで認証やミドルウェア・ルーティングについての知識を身に着けることができました。[→[Qiita記事 リンク](https://qiita.com/tatsuya_1995/items/92f5448175bd33097c13)]
+
+
+### ③AWSでのデプロイ
+web系企業ではクラウドはAWSが主流になっていますのでAWSを用いて本番環境を構築しました。初めてのVimコマンドの操作に慣れていないことや、ディレクトリの階層も頭に入っていなかったことで、configファイルや.envファイルを探したり編集するだけでかなり難航しました。VPCの生成から数えると30〜40時間以上かけてなんとかデプロイしました。多く悩んだ分、仮想サーバーやIPアドレスの知識・コマンドの操作などを身に着けることができました。
+
+
+# 最後に
+大変お忙しい中、最後までご覧いただき誠にありがとうございました。<br>
+ご興味を持っていただけましたら、下記リンクもご覧頂けると幸いです。<br>
+
+[→[自己紹介サイト](url):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]</br>
+[→[Qiitaはこちら](https://qiita.com/yutarou):新しく学習した事や理解できたことはQiitaに投稿して発信力を持ったエンジニアになる為に投稿しています！]</br>
+[→[Twitterはこちら](https://twitter.com/Fisher21663470):Qiitaで投稿した内容を拡散しています！]</br>
+
