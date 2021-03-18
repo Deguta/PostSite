@@ -1,4 +1,5 @@
-<!-- ![画像](/ReadmeFolder/logo.png) -->
+![study-of-postsite](https://user-images.githubusercontent.com/64835852/111588119-79d33c00-8806-11eb-8942-144dd1a65b52.jpg)
+
 
 
 # 概要
