@@ -3,16 +3,20 @@
 
 
 # 概要
-
-[→[アプリケーションのリンク先はこちら](URL)]</br>
+Study-Of-PostSiteは誰でも簡単に投稿ができるWebアプリケーションになっています。
 
 
 # 制作背景
+本来は不妊治療に特化した口コミサイトを作成する予定だったが、
+エラーにつまづいて中々進めなかったのと、基本的な事ができるようになりたいと思ったので
+CRUD機能を使用した投稿サイトを作ることにした。<br>
+これを応用することで今後、私が作りたいものの第一歩になる。<br>
+本来作成したいwebアプリケーションのDBの設計図はほぼできているので添付する。
+
+###次回、製作予定のDB設計
+![db-Online-Reviews](https://user-images.githubusercontent.com/64835852/111604791-00911480-8819-11eb-9592-12720d05caa9.jpg)
 
 
-# システム概要
-
-![システムフロー](/ReadmeFolder/systemflow.png)
 
 # 操作説明
 
@@ -30,16 +34,16 @@
 # 使用技術
  
 **バックエンド**<br>
-PHP 7.2.34 / Laravel 6.20.5
+PHP 7.2.34 / Laravel 6.20.16
 
 **フロントエンド**<br>
-HTML / CSS / javascript / jQuery 3.2.1 / Vue.js(現在学習中のため今後組み込む)
+HTML / CSS / javascript(現在学習中のため今後組み込む)
 
 **インフラ**<br>
-mysql 8.0.22 / AWS(EC2,S3)
+MySQL Ver 14.14 Distrib 5.6.50, for osx10.16 / AWS(EC2,S3)
 
 **その他の使用技術**<br>
-Pusher / git(gitHub) / Visual Studio Code / Gmail
+git(gitHub) / Visual Studio Code / Gmail
  
 # AWS構成図
 ![画像](/ReadmeFolder/aws.png)
