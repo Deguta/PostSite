@@ -17,7 +17,8 @@
 # 操作説明
 
 
-![投稿のテストGIF](https://user-images.githubusercontent.com/64835852/111594604-9bd0bc80-880e-11eb-819a-e2df50ed932c.gif)
+![投稿のテストGIF](https://user-images.githubusercontent.com/64835852/111598983-21ef0200-8813-11eb-8048-2a4c10effbc2.gif)
+
 
 
 
