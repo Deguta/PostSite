@@ -90,24 +90,24 @@ git(gitHub) / Visual Studio Code / Gmail
 # DB設計
 
 ### postsテーブル(新規投稿)
-| **カラム名** | **定義** | **オプション** |
-| ---- | ---- | ---- |
-| name | string | null: false |
-| subject | string | null: false |
-| category | string | null: false |
-| message | string | null: false |
+| **カラム名** | **定義** | 
+| ---- | ---- |
+| name | string |
+| subject | string |
+| category | string |
+| message | string |
 
 ### categoriesテーブル(カテゴリー選択)
-| **カラム名** | **定義** | **オプション** |
-| ---- | ---- | ---- |
-| name | string | null: false |
+| **カラム名** | **定義** |
+| ---- | ---- |
+| name | string |
 
 ### commentsテーブル(コメント投稿)
-| **カラム名** | **定義** | **オプション** |
-| ---- | ---- | ---- |
-| name | string | null: false |
-| comment | text | null: false |
-| post_id | unsignedBigInteger | null: false |
+| **カラム名** | **定義** |
+| ---- | ---- |
+| name | string |
+| comment | text |
+| post_id | unsignedBigInteger |
 
 
 
