@@ -1,7 +1,7 @@
 ![study-of-postsite](https://user-images.githubusercontent.com/64835852/111588119-79d33c00-8806-11eb-8942-144dd1a65b52.jpg)
 
 # 概要
-Study-Of-PostSiteは誰でも簡単に投稿ができるWebアプリケーションになっています。<br>
+**Study-Of-PostSite**は誰でも簡単に投稿ができるWebアプリケーションになっています。<br>
 自分が現在勉強しているプログラミング言語を選択して気軽に投稿できます。
 
 
@@ -13,7 +13,8 @@ Study-Of-PostSiteは誰でも簡単に投稿ができるWebアプリケーショ
 これを応用することで今後、私が作りたいものの第一歩になると思います。
 本来作成したいwebアプリケーションのDBの設計図の途中経過を添付します。
 
-### 製作中のDB設計
+### 製作中のwebアプリケーションとDB設計
+![hospital-reviews](https://user-images.githubusercontent.com/64835852/111732699-70ef7280-88b9-11eb-9153-2ec08b86b5b3.jpg)
 ![db-Online-Reviews](https://user-images.githubusercontent.com/64835852/111604791-00911480-8819-11eb-9592-12720d05caa9.jpg)
 
 
@@ -54,7 +55,7 @@ Study-Of-PostSiteは誰でも簡単に投稿ができるWebアプリケーショ
 ### レスポンシブサイズに適用(iPhoneにて閲覧可能)
 現在、スマートフォンの普及率は8割を超えて尚且つ、サイトはPCよりもスマートフォンで閲覧する傾向が高いことが調べて分かりました。
 そこで、SEO対策も兼ねてレスポンシブサイズに挑戦しました。横幅750px以下で文字の大きさやボックスの大きさの変化が見れると思います。
-今後も、レスポンシブサイズに対応できるように引き続きHTML CSS JavaScriptを勉強します。
+今後も、レスポンシブサイズに対応できるように引き続きHTML CSS JavaScriptを勉強します。<br>
 [→[Qiita laravel レスポンシブサイズ](URL)]<br>
 [参考文献 総務省HP](https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r02/html/nd252110.html#:~:text=2019%E5%B9%B4%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E4%B8%96%E5%B8%AF%E3%81%AE,2%2D1%2D1%EF%BC%89%E3%80%82)<br>
 
@@ -87,32 +88,40 @@ git(gitHub) / Visual Studio Code / Gmail
 
 
 # DB設計
-### ・ ER図
-![画像](/ReadmeFolder/finaltable.png)
-### ・ 各種テーブル
 
-| **テーブル名** | **定義** |
-| ---- | ---- |
-| owners<br>(オーナー) | オーナーの登録情報 |
-| drivers<br>(ドライバー) | ドライバーの登録情報 |
-| owner_schedules<br>(オーナースケジュール) | ドライバーの車両貸出可能な日程 |
-| chats<br>(チャット) | 会話の内容 |
-| contracts<br>(コントラクト) | 契約確定後、契約内容を格納|
+### postsテーブル(新規投稿)
+| **カラム名** | **定義** | **オプション** |
+| ---- | ---- | ---- |
+| name | string | null: false |
+| subject | string | null: false |
+| category | string | null: false |
+| message | string | null: false |
+
+### categoriesテーブル(カテゴリー選択)
+| **カラム名** | **定義** | **オプション** |
+| ---- | ---- | ---- |
+| name | string | null: false |
+
+### commentsテーブル(コメント投稿)
+| **カラム名** | **定義** | **オプション** |
+| ---- | ---- | ---- |
+| name | string | null: false |
+| comment | text | null: false |
+| post_id | unsignedBigInteger | null: false |
+
 
 
 
 # 苦労したところ
 ### ①環境構築
 初めてwebアプリケーションを作成する際に環境構築のエラーにつまづいて進捗が止まりました。
-何とかクリアはできましたがもう一度、作成する際に困らないようにQiitaで纏めてみました。これがきっかけとなって
-新しく気づいたことや理解したことをQiitaで投稿する習慣になりました。<br>
+エラーは解消しましたが、今後新しいwebアプリケーションを作成する際、困らないようにQiitaで纏めてみました。
+これがきっかけとなって新しく気づいたことや理解したことをQiitaで投稿する習慣になりました。<br>
 お陰様で、2021年3月20日現在**16 Contributions** を達成することができました。<br>
 [→[Qiita ‘--hide-modules’](https://qiita.com/yutarou/items/e00a05b4d84ed40dc444)]<br>
 [→[Qiita 初めてのDB接続](https://qiita.com/yutarou/items/9cc90e0a0c3eec51e510)]
 
 
-### ①DB設計
-ER図を添付していますが、実際のアプリケーションとテーブル名やカラム名に相違があります。テーブルの命名規則の理解が曖昧ままDB設計をしており、キャメルケースを用いた記述をしてしまいました。開発終盤に気付きましたが、影響範囲が広すぎて修正が困難になりました。この失敗を二度と繰り返さないよう再度学習を行い、Qiitaにまとめています。初期設計の重要性を身に染みて学びました。[→[Qiita記事 リンク](https://qiita.com/tatsuya_1995/items/4b706fc40fe2f300bbc0)]
 
 
 ### ③AWSでのデプロイ
