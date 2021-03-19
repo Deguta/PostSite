@@ -133,21 +133,31 @@ a.create-btn:hover {
     font-size: 18px;
   }
 }
-/* headerクラス 750px以下のcss 終了*/
 
 
-/* cardクラス  name 750px以下のcss */
-
+/* cardクラス  750px以下のcss */
 @media screen and (max-width: 750px) {
   .name {
-    font-size: 20px;
-    line-height:33px;
+    font-size: 12px;
   }
-}
-/* cardクラス  name 750px以下のcss 終了*/
 
-@media screen and (max-width: 750px) {
-  .subject {
-    font-size: 18px;
+  .date {
+    font-size: 12px;
+  }
+
+  .category {
+    font-size: 12px;
     }
+
+  .subject {
+    font-size: 12px;
+    }
+
+  .message {
+    font-size: 12px;
+    }
+  
+  #continued-btn {
+    font-size: 12px;
+  }
 }

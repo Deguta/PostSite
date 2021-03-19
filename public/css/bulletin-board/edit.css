@@ -1,9 +1,23 @@
-/* formクラス  name 750px以下のcss */
-
+/* cardクラス  750px以下のcss */
 @media screen and (max-width: 750px) {
-  .edit-form {
-    margin-top: 50px;
+  .name {
+    font-size: 12px;
   }
+
+  .date {
+    font-size: 12px;
+  }
+
+  .category {
+    font-size: 12px;
+    }
+
+  .subject {
+    font-size: 12px;
+    }
+
+  .message {
+    font-size: 12px;
+    }
 }
-/* formクラス  name 750px以下のcss 終了*/
 

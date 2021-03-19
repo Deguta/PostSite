@@ -6,11 +6,12 @@
 <header class="navbar navbar-dark bg-primary">
     <a class="header-tag navbar-brand font-weight-bold " href="{{ url('/') }}">Study-Of-PostSite</a>
 </header>
-<p><img src="{{ asset('/css/images/black-board.jpg') }}"id="black-board-image" alt="黒板">
+
+<p>
+    <img src="{{ asset('/css/images/black-board.jpg') }}"id="black-board-image" alt="黒板">
     <p class="header-comment text-white font-weight-bold">投稿一覧表</p>
     <p class="header-text text-white font-weight-bold ">自分のプログラミング勉強を共有しよう!!</p>
 </p>
-
 
 
 @section('content')
@@ -32,22 +33,25 @@
 @foreach ($posts as $post)
 <div class="row no-gutters">
     <div class="card col-sm-7 mt-5 mx-auto border-dark">
-        <div class="h2 card-header text-center bg-dark text-white d-flex justify-content-sm-around">
-            <p  class="name mt-0 mb-0">投稿者　{{ $post->name }}  さん
-                <p class="date h6 mt-2"> 投稿日　{{ $post->created_at->format('Y.m.d') }}</p>
-            </p>
-        </div>
-        <div class="h5 card-header text-center back-color-gradient">
-            <section>カテゴリー　{{ $post->category }} </section>
-        </div>
-        <div class="card-body">
-            <div class="h5 mb-3 p-3 border-bottom border-dark pb-2 text-center">
-                <section class="subject">タイトル　{{ $post->subject }} </section>
-            </div>
 
-            <p class="card-text left">
+        <div class="card-header h5 text-center bg-dark text-white d-flex justify-content-sm-around">
+            <p class="name m-auto">投稿者 {{ $post->name }}さん</p>
+            <p class="date m-auto">投稿日 {{ $post->created_at->format('Y.m.d') }}</p>
+        </div>
+
+        <div class="h5 card-header text-center">
+            <p class="category m-auto">カテゴリー {{ $post->category }} </p>
+        </div>
+
+        <div class="h5 card-header text-center bg-white">
+            <p class="category m-auto">件名 {{ $post->subject }} </p>
+        </div>
+
+        <div class="card-body">
+
+            <p class="card-text message left">
                 {!! nl2br(e(Str::limit($post->message, 180))) !!}
-                <a href="{{ route('bulletin-board.show', $post) }}" class="btn btn-primary ">続きを読む</a>
+                <a href="{{ route('bulletin-board.show', $post) }}" id="continued-btn" class="btn btn-primary">続きを読む</a>
             </p>
             @if ($post->comments->count() >= 1)
             <p>

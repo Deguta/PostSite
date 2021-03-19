@@ -13,24 +13,28 @@
 
     <div class="row no-gutters">
         <div class="card col-sm-8 mt-3 mx-auto border-dark">
-            <div class="h2 card-header text-center bg-dark text-white d-flex justify-content-sm-around">
-                <p  class="name mt-0 mb-0">投稿者　{{ $post->name }}  さん
-                    <p class="date h6 mt-2"> 投稿日　{{ $post->created_at->format('Y.m.d') }}</p>
-                </p>
+
+            <div class="card-header h5 text-center bg-dark text-white d-flex justify-content-sm-around">
+                <p class="name m-auto">投稿者 {{ $post->name }}さん</p>
+                <p class="date m-auto">投稿日 {{ $post->created_at->format('Y.m.d') }}</p>
             </div>
-            <div class="h5 card-header text-center back-color-gradient">
-                <section>カテゴリー　{{ $post->category }} </section>
+
+            <div class="h5 card-header text-center">
+                <p class="category m-auto">カテゴリー {{ $post->category }} </p>
             </div>
+
+            <div class="h5 card-header text-center bg-white">
+                <p class="category m-auto">件名 {{ $post->subject }} </p>
+            </div>
+
             <div class="card-body">
-                <div class="h5 border-bottom border-dark pb-2 text-center">
-                    <section class="subject">タイトル　{{ $post->subject }} </section>
-                </div>
-                <p class="card-text left">
+                <p class="card-text message left">
                     {{ $post->message }}
                 </p>
             </div>
         </div>
     </div>
+
     @if (session('commentstatus'))
         <div class="alert alert-success mt-4 mb-4">
             {{ session('commentstatus') }}

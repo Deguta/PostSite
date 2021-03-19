@@ -9,15 +9,33 @@
 </header>
 @section('content')
 <div class="container mt-4">
-    <div class="border p-4">
-        <h1 class="h4 mb-4 font-weight-bold">
-            編集と更新ページ
-        </h1>
-            <tr>
-                <td>{{ $post->name }}</td>
-                <td>{{ $post->subject }}</td>
-                <td>{!! nl2br(e($post->message)) !!}</td>
-            </tr>
+    <h1 class="h4 mb-4 font-weight-bold">
+        編集と更新ページ
+    </h1>
+    <div class="row no-gutters">
+       <div class="card col-sm-8 mt-3 mx-auto border-dark">
+
+            <div class="card-header h5 text-center bg-dark text-white d-flex justify-content-sm-around">
+                <p class="name m-auto">投稿者 {{ $post->name }}さん</p>
+                <p class="date m-auto">投稿日 {{ $post->created_at->format('Y.m.d') }}</p>
+            </div>
+
+            <div class="h5 card-header text-center">
+                <p class="category m-auto">カテゴリー {{ $post->category }} </p>
+            </div>
+
+            <div class="h5 card-header text-center bg-white">
+                <p class="category m-auto">件名 {{ $post->subject }} </p>
+            </div>
+
+            <div class="card-body">
+                <p class="card-text message left">
+                    {{ $post->message }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
         <form method="POST" action="{{ route('bulletin-board.update', $post )}}">
             @csrf
             @method('PUT')
