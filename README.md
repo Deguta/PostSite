@@ -121,7 +121,11 @@ git(gitHub) / Visual Studio Code / Gmail
 [→[Qiita ‘--hide-modules’](https://qiita.com/yutarou/items/e00a05b4d84ed40dc444)]<br>
 [→[Qiita 初めてのDB接続](https://qiita.com/yutarou/items/9cc90e0a0c3eec51e510)]
 
-
+### ②検索機能
+どこにでもある検索機能ですがこれを実装するのが難しかったです。Udemyの教材とは違う
+やり方を学びたいのと複数のカテゴリーで検索ができるようにモデルとスコープを使ったやり方になります。
+ここから応用してカテゴリー毎の検索ができるようにしてみたいです
+[→[Qiita ‘検索機能の実装’](https://qiita.com/yutarou/items/e00a05b4d84ed40dc444)]<br>
 
 
 ### ③AWSでのデプロイ
