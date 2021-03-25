@@ -67,8 +67,8 @@
 
 ### 可読性を上げる為にconfigフォルダを使用してoptionの選択肢を作成
 option内容が多い都道府県は47個ありますがこれをviewファイルに全て記述すると見えにくい上に編集もし辛いと思います。
-そこで、Configフォルダにoption内容を格納する方法を実行してみました。今回のoption内容は少ないですが多い時に実用できると思います。<br>
-こちらのQiitaに纏めています。
+そこで、Configフォルダにoption内容を格納する方法を実行してみました。今回のoption内容は少ないですが多い時に実用できると思います。
+こちらのQiitaに纏めています。<br>
 [→[Qiita laravel Configフォルダを使ってoptionをスッキリさせたい!!](https://qiita.com/yutarou/items/4f7cdb74a409e0ace6c0)]
 
 
@@ -90,7 +90,7 @@ git(gitHub) / Visual Studio Code / Gmail
 # DB設計
 
 ### postsテーブル(新規投稿)
-| **カラム名** | **定義** | 
+| **カラム名** | **定義** |
 | ---- | ---- |
 | name | string |
 | subject | string |
@@ -118,15 +118,15 @@ git(gitHub) / Visual Studio Code / Gmail
 エラーは解消しましたが、今後新しいwebアプリケーションを作成する際、困らないようにQiitaで纏めてみました。
 これがきっかけとなって新しく気づいたことや理解したことをQiitaで投稿する習慣になりました。<br>
 お陰様で、2021年3月20日現在**16 Contributions** を達成することができました。<br>
-[→[Qiita ‘--hide-modules’](https://qiita.com/yutarou/items/e00a05b4d84ed40dc444)]<br>
+[→[Qiita --hide-modules](https://qiita.com/yutarou/items/e00a05b4d84ed40dc444)]<br>
 [→[Qiita 初めてのDB接続](https://qiita.com/yutarou/items/9cc90e0a0c3eec51e510)]
 
 ### ②検索機能
-どこにでもある検索機能ですがこれを実装するのが難しかったです
-今回はスコープを使用した検索機能になります。基本的なデータベースの操作を行いたい上に、毎回同じ検索条件を書くならEloquentのクエリスコープを使った方が楽だからです。
-また、検索機能で使用する時にWhere句はよく使います。このWere句ですが、条件式をモデルに定義（スコープ機能）して使いまわすことができます。今後、複雑な検索機能を実装するための基本となりますので実装してみました。
+どこにでもある検索機能ですがこれを実装するのが難しかったです。<br>
+今回はスコープを使用した検索機能になります。毎回同じ検索条件を書くならEloquentのクエリスコープを使った方が楽だからです。
+また、検索機能で使用する時にWhere句はよく使います。このWere句ですが、条件式をモデルに定義（スコープ機能）して使いまわすことができます。今後、複雑な検索機能を実装するための基本となりますので実装してみました。<br>
 
-[→[Qiita ‘検索機能の実装’](https://qiita.com/yutarou/items/9da4e5248e8df5b2c5ce)]<br>
+[→[Qiita ‘検索機能の実装’](https://qiita.com/yutarou/items/9da4e5248e8df5b2c5ce)]
 
 
 ### ③AWSでのデプロイ
@@ -138,7 +138,7 @@ web系企業ではクラウドはAWSが主流になっていますのでAWSを�
 大変お忙しい中、最後までご覧いただき誠にありがとうございました。<br>
 ご興味を持っていただけましたら、下記リンクもご覧頂けると幸いです。<br>
 
-[→[自己紹介サイト](url):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]<br>
+[→[自己紹介サイト](http://ym-portfolio.work/):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]<br>
 [→[Qiitaはこちら](https://qiita.com/yutarou):新しく学習した事や理解できたことはQiitaに投稿して発信力を持ったエンジニアになる為に投稿しています！]<br>
 [→[Twitterはこちら](https://twitter.com/Fisher21663470):Qiitaで投稿した内容を拡散しています！]<br>
 
