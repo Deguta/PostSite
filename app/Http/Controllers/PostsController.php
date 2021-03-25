@@ -13,7 +13,7 @@ class PostsController extends Controller {
     public function index(Request $request) {
         $searchword = $request->searchword;
         $posts = Post::orderBy('created_at', 'desc')
-        ->fuzzyNameMessage($searchword)
+        ->Search($searchword)
         ->paginate(10); //最新の投稿を上から表示と１ページに10投稿を表示する
 
         return view('bulletin-boards.index',['posts'=> $posts,'searchword' => $searchword]);
