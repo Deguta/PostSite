@@ -132,6 +132,9 @@ git(gitHub) / Visual Studio Code / Gmail
 ### ③AWSでのデプロイ
 web系企業ではクラウドはAWSが主流になっていますのでAWSを用いて本番環境を構築しました。初めてのVimコマンドの操作に慣れていないことや、ディレクトリの階層も頭に入っていなかったことで、configファイルや.envファイルを探したり編集するだけでかなり難航しました。特に、ローカル環境では反映されているが本番環境で反映されていないというエラーが多発して苦戦しました。
 
+[→[2021年版 画像付き AWS ERROR 2003 (HY000): Can't connect to MySQL server](https://qiita.com/yutarou/items/553f60e11b5535050468)]
+
+
 
 
 # 最後に
