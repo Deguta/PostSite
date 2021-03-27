@@ -56,6 +56,7 @@
 そこで、SEO対策も兼ねてレスポンシブサイズに挑戦しました。横幅750px以下で文字の大きさやボックスの大きさの変化が見れると思います。
 今後も、レスポンシブサイズに対応できるように引き続きHTML CSS JavaScriptを勉強します。<br>
 [→[Qiita laravel レスポンシブサイズ](URL)]<br>
+
 [参考文献 総務省HP](https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r02/html/nd252110.html#:~:text=2019%E5%B9%B4%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E4%B8%96%E5%B8%AF%E3%81%AE,2%2D1%2D1%EF%BC%89%E3%80%82)<br>
 
 [参考文献 株式会社ファインピクサー](https://fainpixar.co.jp/column/web-marketing/40827/)
