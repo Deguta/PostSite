@@ -2,14 +2,21 @@
   <html lang="ja">
   <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 表示領域を、各端末の画面幅に合わせて、いい感じに調整する」という内容です。 -->
-  <title>トップページ</title>
+
+  {{--  SEO対策 レスポンシブデザイン  --}}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{ asset('/css/bulletin-board/top.css') }}" >
+
+  {{-- レスポンシブデザイン CSS  750px以下になると反映  --}}
   <link rel="stylesheet" href="{{ asset('/css/bulletin-board/top.css') }}" media="screen and (max-width:750px)" >
   </head>
 
   <body>
+
+
+    {{--  ヘッダー  --}}
     <header class="navbar navbar-dark  navbar-expand-sm bg-primary ">
       <div class="container">
           <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">Study-Of-PostSite</a>
@@ -22,12 +29,16 @@
       </div>
     </header>
 
+
+    {{--  ヘッダートップイメージ  --}}
     <div class="header-image">
       <img src="{{ asset('/css/images/top-image.jpg') }}" id="top-image" alt="トップ画像">
       <p class="top-p text-warning font-weight-bold mb-5">プログラミング学習を共有しよう!!</p>
       <a href="{{ route('bulletin-board.index') }}"  class="create-btn mt-5  font-weight-bold">投稿一覧ページはこちらです</a>
     </div>
 
+
+    {{--  Study-Of-PostSiteの概要  --}}
     <section class="border border-dark bg-light">
       <div class="container">
         <div class="row">
@@ -49,36 +60,39 @@
       </div>
     </section>
 
+
+    {{--  フッター  --}}
     <footer class="bg-dark pt-5 pb-5">
+
       <div class="container">
         <div class="card-body text-center text-light">
           <h4>開発者のQiita Twitter Githubも是非見て下さい</h4>
         </div>
+
+        {{--  リスト一覧  --}}
         <ul class="list-inline mb-5 d-flex justify-content-around ">
           <li>
             <a href="https://qiita.com/yutarou">
               <div class="navbar-brand-qiita"></div>
             </a>
           </li>
+
           <li>
             <a href="https://twitter.com/Fisher21663470">
               <div class="navbar-brand-twitter d-block m-auto"></div>
             </a>
           </li>
+
           <li>
             <a href="https://github.com/Deguta">
               <div class="navbar-brand-github"></div>
             </a>
           </li>
         </ul>
+
       </div>
+
     </footer>
+
   </body>
   </html>
-
- 
-
-
-
-
- 
