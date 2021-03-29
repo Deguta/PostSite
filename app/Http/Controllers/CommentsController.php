@@ -9,8 +9,10 @@ use App\Models\Comment;
 use App\Http\Requests\CommentRequest;
 
 class CommentsController extends Controller
+
 {
     public function store(CommentRequest $request){
+
         $savedata = [
         'post_id' => $request->post_id,
         'name' => $request->name,
@@ -20,7 +22,10 @@ class CommentsController extends Controller
     $comment = new Comment;
     $comment->fill($savedata)->save();
 
-    return redirect()->route('bulletin-board.show', [$savedata['post_id']])->with('commentstatus','コメントを投稿しました');
+    return redirect()
+    ->route('bulletin-board.show', [$savedata['post_id']])
+    ->with('commentstatus','コメントを投稿しました');
     }
+
 }
 

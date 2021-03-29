@@ -13,14 +13,17 @@
     <p class="header-text text-white font-weight-bold ">自分のプログラミング勉強を共有しよう!!</p>
 </p>
 
-
-@section('content')
 {{--  以下のviewページを自由にカスタマイズ  --}}
+@section('content')
 
 
 {{--  新規投稿フォームと検索フォーム  --}}
 <div class="mt-3 d-flex justify-content-sm-around" >
+
+    {{--  新規投稿フォームに遷移  --}}
     <a href="{{ route('bulletin-board.create') }}"  class="create-btn">投稿の新規作成はこちらです</a>
+
+    {{--  検索フォーム  --}}
     <form class="form-inline" method="GET" action="{{ route('bulletin-board.index') }}">
         <input type="text" name="searchword" value="{{$searchword}}"  class="form-control mr-sm-2" placeholder="キーワードを入力">
         <button type="submit" class="search-box btn btn-info">検索</button>
