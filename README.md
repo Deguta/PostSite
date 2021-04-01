@@ -140,7 +140,9 @@ git(gitHub) / Visual Studio Code / Gmail
 web系企業ではクラウドはAWSが主流になっていますのでAWSを用いて本番環境を構築しました。初めてのVimコマンドの操作に慣れていないことや、ディレクトリの階層も頭に入っていなかったことで、configファイルや.envファイルを探したり編集するだけでかなり難航しました。特に、ローカル環境では反映されているが本番環境で反映されていないというエラーが多発して苦戦しました。
 
 [→[Qiita 2021年版 画像付き AWS ERROR 2003 (HY000): Can't connect to MySQL server](https://qiita.com/yutarou/items/553f60e11b5535050468)]<br>
-[→[Qiita AWS 画像が表示されない](https://qiita.com/yutarou/items/6afb44e882d4be2396ec)]
+[→[Qiita AWS 画像が表示されない](https://qiita.com/yutarou/items/6afb44e882d4be2396ec)]<br>
+[→[Qiita AWS Uncaught ReferneceErroe:PhpDebugBarを削除](https://qiita.com/yutarou/items/e9010c70a267a869adc4)]
+
 
 
 
