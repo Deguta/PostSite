@@ -60,6 +60,20 @@
       </div>
     </section>
 
+    {{--  お問い合わせ  --}}
+    <footer class="bg-dark pt-5 pb-5">
+
+      <div class="container">
+        <div class="card-body text-center text-light">
+          <h4>開発者のQiita Twitter Githubも是非見て下さい</h4>
+        </div>
+
+        
+
+      </div>
+
+    </footer>
+
 
     {{--  フッター  --}}
     <footer class="bg-dark pt-5 pb-5">
