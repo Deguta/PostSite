@@ -61,18 +61,17 @@
     </section>
 
     {{--  お問い合わせ  --}}
-    <footer class="bg-dark pt-5 pb-5">
+    <div class="bg-dark pt-5 pb-5">
 
       <div class="container">
         <div class="card-body text-center text-light">
-          <h4>開発者のQiita Twitter Githubも是非見て下さい</h4>
+          <a href="{{ route('contact.index') }}">
+            <h4>お問い合わせはこちらになります</h4>
+          </a>
         </div>
-
-        
-
       </div>
 
-    </footer>
+    </div>
 
 
     {{--  フッター  --}}
