@@ -3,6 +3,13 @@
 <link rel="stylesheet" href="{{ asset('/css/bulletin-board/index-list.css') }}" >
 <link rel="stylesheet" href="{{ asset('/css/bulletin-board/index-list.css') }}" media="screen and (max-width:750px)" >
 
+<header>
+  @component('components.header')
+      @slot('header')
+      @endslot
+  @endcomponent
+</header>
+
 @section('content')
 <form method="POST" action="{{ route('contact.confirm') }}">
   @csrf
@@ -10,7 +17,7 @@
 
     <div class="panel-default  w-75  mx-auto card mt-5">
 
-      <p class="panel-heading  h2 p-3 text-center bg-primary text-white">お問い合わせフォーム</p>
+      <p class="panel-heading  h2 p-3 text-center bg-dark text-white">お問い合わせフォーム</p>
 
       <div class="panel-body">
           <!-- //hasは入力値の存在チェック 特定のエラーの取得 {{ $errors->first('username') }}
@@ -69,4 +76,3 @@
 
 </form>
 @endsection
-

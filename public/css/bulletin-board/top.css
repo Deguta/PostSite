@@ -119,24 +119,12 @@ a.create-btn:hover {
 }
 /* header 750px以下のcss 終了*/
 
+footer {
+  background-color: #EEEEEE;
+}
 
-.navbar-brand-qiita {
-  background: url("../images/Qiita.png") no-repeat center;
-  background-size: contain;
-  height: 50px;
-  width: 100px;
-}
-.navbar-brand-twitter {
-  background: url("../images/twitter.png") no-repeat center;
-  background-size: contain;
-  height: 50px;
-  width: 100px;
-}
-.navbar-brand-github {
-  background: url("../images/github.png") no-repeat center;
-  background-size: contain;
-  height: 50px;
-  width: 100px;
+#contact-page {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 750px) {

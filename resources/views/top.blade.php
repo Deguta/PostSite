@@ -61,50 +61,14 @@
     </section>
 
     {{--  お問い合わせ  --}}
-    <div class="bg-dark pt-5 pb-5">
-
+    <footer class="bg-dark pt-5 pb-5">
       <div class="container">
-        <div class="card-body text-center text-light">
-          <a href="{{ route('contact.index') }}">
+        <div class=" card-body text-center text-light">
+          <a href="{{ route('contact.index') }}" id="contact-page">
             <h4>お問い合わせはこちらになります</h4>
           </a>
         </div>
-      </div>
-
-    </div>
-
-
-    {{--  フッター  --}}
-    <footer class="bg-dark pt-5 pb-5">
-
-      <div class="container">
-        <div class="card-body text-center text-light">
-          <h4>開発者のQiita Twitter Githubも是非見て下さい</h4>
-        </div>
-
-        {{--  リスト一覧  --}}
-        <ul class="list-inline mb-5 d-flex justify-content-around ">
-          <li>
-            <a href="https://qiita.com/yutarou">
-              <div class="navbar-brand-qiita"></div>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://twitter.com/Fisher21663470">
-              <div class="navbar-brand-twitter d-block m-auto"></div>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://github.com/Deguta">
-              <div class="navbar-brand-github"></div>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
+      </div >
     </footer>
 
   </body>

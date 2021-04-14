@@ -131,6 +131,10 @@ return [
             'category.required' => 'カテゴリーを選択してください',
             'comment.required' => 'コメントを入力して下さい',
             'comment.max' => 'コメントは350文字以内にして下さい',
+            'password'=>'パスワード', 'email'=>'メールアドレス',
+            'title'=>'件名','body'=>'本文',
+        ],
+        
 ],
 
 ];
