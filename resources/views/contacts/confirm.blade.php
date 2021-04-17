@@ -10,6 +10,8 @@
   @endcomponent
 </header>
 
+@extends('layouts.app')
+
 @section('content')
   <form method="POST" action="{{ route('contact.send') }}">
     @csrf
@@ -54,49 +56,3 @@
     </div>
   </form>
 @endsection
-
-{{--  
-  <input type="submit" name="action" class="btn bg-primary  text-white btn-lg" value="投稿内容を送信する">
-  <input type="submit" name="action" class="btn bg-danger text-white  btn-lg"  value="入力内容を修正する"/>
-
-<button type="submit" name="action" value="back">
-  入力内容修正
-</button>
-<button type="submit" name="action" value="submit">
-  送信する
-</button> 
-
-
-<form method="POST" action="{{ route('contact.send') }}"> //入力に問題が無かったら次のコントローラーに送る際のルーティングを設定
-    @csrf
-
-    <label>メールアドレス</label>
-    {{ $inputs['email'] }} //index.blade.phpにある。'email'を関数化して橋渡ししたもの.また、csrf対策もしている
-    <input
-        name="email"
-        value="{{ $inputs['email'] }}"
-        type="hidden">　//ソースコードでは表示されるが入力された項目を隠すため?
-
-    <label>タイトル</label>
-    {{ $inputs['title'] }}
-    <input
-        name="title"
-        value="{{ $inputs['title'] }}"
-        type="hidden">
-
-
-    <label>お問い合わせ内容</label>
-    {!! nl2br(e($inputs['body'])) !!} 
-    <input
-        name="body"
-        value="{{ $inputs['body'] }}"
-        type="hidden">
-
-    <button type="submit" name="action" value="back">
-        入力内容修正
-    </button>
-    <button type="submit" name="action" value="submit">
-        送信する
-    </button>
-</form>
-@endsection  --}}
