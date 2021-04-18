@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\ContactSendmail;
+
 
 class ContactController extends Controller
 {
@@ -24,7 +26,7 @@ class ContactController extends Controller
         $inputs = $request->all();
 
         //入力内容確認ページのviewに変数を渡して表示
-        return view('contact.confirm', [
+        return view('contacts.confirm', [
             'inputs' => $inputs,
         ]);
         // dd($inputs);
@@ -48,7 +50,7 @@ class ContactController extends Controller
         //actionの値で分岐
         if($action !== 'submit'){
             return redirect()
-                ->route('contact.index')
+                ->route('contacts.index')
                 ->withInput($inputs);
 
         } else {
@@ -59,7 +61,7 @@ class ContactController extends Controller
             $request->session()->regenerateToken();
 
             //送信完了ページのviewを表示
-            return view('contact.complete');
+            return view('contacts.complete');
             
         }
     }

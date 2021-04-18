@@ -1,4 +1,14 @@
-@extends('layouts.app')
+@extends('layout.bulletin-board-common')
+@section('title', '送信完了画面')
+<link rel="stylesheet" href="{{ asset('/css/bulletin-board/index-list.css') }}" >
+<link rel="stylesheet" href="{{ asset('/css/bulletin-board/index-list.css') }}" media="screen and (max-width:750px)" >
+
+<header>
+  @component('components.header')
+      @slot('header')
+      @endslot
+  @endcomponent
+</header>
 
 @section('content')
 <div class="container">
