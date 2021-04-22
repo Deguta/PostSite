@@ -32,7 +32,7 @@
 
             {{--  カテゴリー  --}}
             <div class="h5 card-header text-center">
-                <p class="category m-auto">カテゴリー {{ $post->category }} </p>
+                <p class="category m-auto">言語名 {{ $post->category }} </p>
             </div>
 
 
@@ -78,7 +78,7 @@
 
                 {{--  カテゴリーフォーム  --}}
                 <div class="form-group">
-                    <label for="subject">カテゴリー</label>
+                    <label for="subject">言語名を選択して下さい</label>
                         {{--  <select type="text" class="form-control {{ $errors->has('category') ? 'is-invalid' : ''}}" value="{{ old('category') }}"  name="category">  --}}
                         <select type="text" class="form-control" name="category">
                         @foreach($study as $studies)
