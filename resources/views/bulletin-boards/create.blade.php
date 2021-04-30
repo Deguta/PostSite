@@ -42,7 +42,7 @@
                 {{--  カテゴリーフォーム  --}}
                 <div class="form-group">
                     <label for="subject">言語を選択して下さい</label>
-                        {{--  <select type="text" class="form-control {{ $errors->has('category') ? 'is-invalid' : ''}}" value="{{ old('category') }}"  name="category">  --}}
+                        <select type="text" class="form-control {{ $errors->has('category') ? 'is-invalid' : ''}}" value="{{ old('category') }}"  name="category">
                         <select type="text" class="form-control" name="category">
                         @foreach($study as $studies)
                             <option value="{{ $studies }}">{{ $studies }}</option>
