@@ -40,7 +40,10 @@ option内容の選択肢が多い場合見辛いと思いました。
 [→[Qiita laravel Configフォルダを使ってoptionをスッキリさせたい!!](https://qiita.com/yutarou/items/4f7cdb74a409e0ace6c0)]
 
 ### お問い合わせ機能を実装
-4月23日に実装が完了しました。ローカル環境で送信が可能になります。
+ローカル環境にて送信が可能になります。今後は項目を増やしてお問い合わせ機能をもっと充実させたいです。
+
+### お問い合わせ機能のGIF動画
+![お問い合わせ機能のGIF動画](https://user-images.githubusercontent.com/64835852/118666945-8ab42400-b82e-11eb-9023-132a7f0993bc.gif)
 
 
 # 苦労したところ
