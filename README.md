@@ -45,6 +45,8 @@ option内容の選択肢が多い場合見辛いと思いました。
 ### お問い合わせ機能のGIF動画
 ![お問い合わせ機能のGIF動画](https://user-images.githubusercontent.com/64835852/118666945-8ab42400-b82e-11eb-9023-132a7f0993bc.gif)
 
+### お問い合わせのバリデーションのGIF動画
+![お問い合わせのバリデーションのGIF動画](https://user-images.githubusercontent.com/64835852/118834608-4cd20100-b8fd-11eb-9fbd-c957aa4c3cd2.gif)
 
 # 苦労したところ
 ### ①環境構築
